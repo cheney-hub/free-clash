@@ -103,7 +103,7 @@ proxies:
 
   - name: Free VMESS Proxy Server03
     port: 80
-    uuid: c924246f-7a3f-5a86-881d-68f16b916598
+    uuid: 9b8de602-118f-5d3e-ad9c-b46f11f24fc4
     server: 45.76.153.172
     cipher: auto
     alterId: 0
