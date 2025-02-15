@@ -25,7 +25,7 @@ proxies:
 
   - name: Free VMESS Proxy Server00
     port: 80
-    uuid: 5cb0b5ce-9088-56eb-a176-f7fc4599c3d9
+    uuid: 48dd6cb6-aa19-5cff-b1cf-3d0aa61476ff
     server: 45.77.178.67
     cipher: auto
     alterId: 0
