@@ -1,4 +1,128 @@
-mixed-port: 7896
+
+
+proxies:
+  - name: 或原clash订阅已过期
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 搜索倚天剑clash
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 或登录https://a.aiguobit.com
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 备用https://a.hidexx.com
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 搜 crossxx-labs/free-proxy
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 获取免费账号：github.com 中
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 今天4小时额度已用完
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 请明天重新添加订阅再使用
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 领取更长时间的免费试用账号
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+
+proxy-groups:
+  - name: "1.订阅已过期或今日免费额度已用完- Try tomorrow"
+    proxies:
+      - 今天4小时额度已用完
+      - 或原clash订阅已过期
+      - 请明天重新添加订阅再使用
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 300000
+  - name: "2.请到倚天剑clash购买专用线路- Buy Server"
+    proxies:
+      - 搜索倚天剑clash
+      - 或登录https://a.aiguobit.com
+      - 备用https://a.hidexx.com
+      - 领取更长时间的免费试用账号
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 300000
+  - name: "3.更多帮助信息- More info"
+    proxies:
+      - 获取免费账号：github.com 中
+      - 搜 crossxx-labs/free-proxy
+      - 或登录https://a.aiguobit.com
+      - 领取更长时间的免费试用账号
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 300000
+
+rules:
+    - 'GEOIP,CN,DIRECT'
+    - 'MATCH,DIRECT'mixed-port: 7896
 allow-lan: false
 mode: rule
 log-level: info
@@ -25,7 +149,7 @@ proxies:
 
   - name: Free VMESS Proxy Server00
     port: 80
-    uuid: 2ae52c4e-9b1b-5b9a-83c2-9b922a2c5499
+    uuid: 2909252e-6730-535d-9f53-7f0da386bdc6
     server: 45.77.178.67
     cipher: auto
     alterId: 0
@@ -51,7 +175,7 @@ proxies:
 
   - name: Free VMESS Proxy Server01
     port: 80
-    uuid: a1a8e007-18c8-56d5-a14d-5139a3afa5c1
+    uuid: 7fb487ea-a868-5aaf-b05d-89aac855ba00
     server: 45.76.153.172
     cipher: auto
     alterId: 0
@@ -77,7 +201,7 @@ proxies:
 
   - name: Free VMESS Proxy Server02
     port: 80
-    uuid: 5dfc5827-3308-5019-94cd-a5e7d424a276
+    uuid: 51434126-9744-5ac1-a009-a5e1a9d5c176
     server: 45.77.178.67
     cipher: auto
     alterId: 0
@@ -103,7 +227,7 @@ proxies:
 
   - name: Free VMESS Proxy Server03
     port: 80
-    uuid: ffc7d34b-8928-58cc-a93c-d1630d4201b1
+    uuid: d881b6b6-fd88-564d-82bd-c23d32de14ee
     server: 45.76.153.172
     cipher: auto
     alterId: 0
