@@ -1,785 +1,125 @@
-mixed-port: 7896
-allow-lan: false
-mode: rule
-log-level: info
-external-controller: '127.0.0.1:9097'
-unified-delay: true
-profile:
-    store-selected: true
-tun:
-    mtu: 1500
-dns:
-    enable: true
-    use-system-hosts: false
-    listen: '127.0.0.1:5335'
-    ipv6: true
-    default-nameserver: [180.76.76.76, 182.254.118.118, 223.6.6.6, 180.184.1.1]
-    enhanced-mode: fake-ip
-    fake-ip-range: 198.18.0.1/16
-    fake-ip-filter: ['*.lan', 'stun.*.*.*', 'stun.*.*', time.windows.com, time.nist.gov, time.apple.com, time.asia.apple.com, '*.ntp.org.cn', '*.openwrt.pool.ntp.org', time1.cloud.tencent.com, time.ustc.edu.cn, pool.ntp.org, ntp.ubuntu.com, ntp.aliyun.com, ntp1.aliyun.com, ntp2.aliyun.com, ntp3.aliyun.com, ntp4.aliyun.com, ntp5.aliyun.com, ntp6.aliyun.com, ntp7.aliyun.com, time1.aliyun.com, time2.aliyun.com, time3.aliyun.com, time4.aliyun.com, time5.aliyun.com, time6.aliyun.com, time7.aliyun.com, '*.time.edu.cn', time1.apple.com, time2.apple.com, time3.apple.com, time4.apple.com, time5.apple.com, time6.apple.com, time7.apple.com, time1.google.com, time2.google.com, time3.google.com, time4.google.com, music.163.com, '*.music.163.com', '*.126.net', musicapi.taihe.com, music.taihe.com, songsearch.kugou.com, trackercdn.kugou.com, '*.kuwo.cn', api-jooxtt.sanook.com, api.joox.com, joox.com, y.qq.com, '*.y.qq.com', streamoc.music.tc.qq.com, mobileoc.music.tc.qq.com, isure.stream.qqmusic.qq.com, dl.stream.qqmusic.qq.com, aqqmusic.tc.qq.com, amobile.music.tc.qq.com, '*.xiami.com', '*.music.migu.cn', music.migu.cn, '*.msftconnecttest.com', '*.msftncsi.com', localhost.ptlogin2.qq.com, '*.*.*.srv.nintendo.net', '*.*.stun.playstation.net', 'xbox.*.*.microsoft.com', '*.ipv6.microsoft.com', '*.*.xboxlive.com', speedtest.cros.wr.pvp.net]
-    nameserver: ['https://223.6.6.6/dns-query#h3=true', 'https://223.5.5.5/dns-query#h3=true', 'https://223.6.6.6/dns-query', 'https://120.53.53.53/dns-query', 'https://dns.rubyfish.cn/dns-query', 'https://doh.pub/dns-query', 'https://dns.alidns.com/dns-query']
-    fallback: ['https://000000.dns.nextdns.io/dns-query#h3=true', 'https://101.101.101.101/dns-query', 'https://208.67.220.220/dns-query', 'https://dns.rubyfish.cn/dns-query', 'tls://8.8.4.4', 'tls://1.0.0.1:853', 'https://cloudflare-dns.com/dns-query', 'https://dns.google/dns-query']
-    fallback-filter: { geoip: true, ipcidr: [240.0.0.0/4, 0.0.0.0/32, 127.0.0.1/32], domain: [+.google.com, +.facebook.com, +.twitter.com, +.youtube.com, +.xn--ngstr-lra8j.com, +.google.cn, +.googleapis.cn, +.googleapis.com, +.gvt1.com] }
+
 
 proxies:
-
-  - name: Free VMESS Proxy Server00
-    port: 80
-    uuid: 6090d086-8fb5-55fa-b75a-c4dcceabe3d0
-    server: 45.77.178.67
-    cipher: auto
-    alterId: 0
-    type: vmess
-    network: http
-    http-opts:
-      method: "GET"
-      path:
-        - '/'
-      headers:
-        Host:
-          - www.cloudflare.com
-          - www.amazon.com
-          - bing.com
-        User-Agent:
-          - "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36"
-          - "Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46"
-        Connection:
-          - "keep-alive"
-        Accept-Encoding:
-          - gzip
-          - deflate
-
-  - name: Free VMESS Proxy Server01
-    port: 80
-    uuid: 33d61396-62cd-596e-aade-6853d80a2a71
-    server: 45.76.153.172
-    cipher: auto
-    alterId: 0
-    type: vmess
-    network: http
-    http-opts:
-      method: "GET"
-      path:
-        - '/'
-      headers:
-        Host:
-          - www.cloudflare.com
-          - www.amazon.com
-          - bing.com
-        User-Agent:
-          - "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36"
-          - "Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46"
-        Connection:
-          - "keep-alive"
-        Accept-Encoding:
-          - gzip
-          - deflate
-
-  - name: Free VMESS Proxy Server02
-    port: 80
-    uuid: 6a83d188-ef02-57da-90d4-a94a51ed29a6
-    server: 45.77.178.67
-    cipher: auto
-    alterId: 0
-    type: vmess
-    network: http
-    http-opts:
-      method: "GET"
-      path:
-        - '/'
-      headers:
-        Host:
-          - www.cloudflare.com
-          - www.amazon.com
-          - bing.com
-        User-Agent:
-          - "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36"
-          - "Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46"
-        Connection:
-          - "keep-alive"
-        Accept-Encoding:
-          - gzip
-          - deflate
-
-  - name: Free VMESS Proxy Server03
-    port: 80
-    uuid: 8a516b85-7bf4-53ff-8add-e14a01f8449b
-    server: 45.76.153.172
-    cipher: auto
-    alterId: 0
-    type: vmess
-    network: http
-    http-opts:
-      method: "GET"
-      path:
-        - '/'
-      headers:
-        Host:
-          - www.cloudflare.com
-          - www.amazon.com
-          - bing.com
-        User-Agent:
-          - "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36"
-          - "Mozilla/5.0 (iPhone; CPU iPhone OS 10_0_2 like Mac OS X) AppleWebKit/601.1 (KHTML, like Gecko) CriOS/53.0.2785.109 Mobile/14A456 Safari/601.1.46"
-        Connection:
-          - "keep-alive"
-        Accept-Encoding:
-          - gzip
-          - deflate
-
+  - name: 或原clash订阅已过期
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 搜索倚天剑clash
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 或登录https://a.aiguobit.com
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 备用https://a.hidexx.com
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: "搜 crossxx-labs/free-proxy"
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: "获取免费账号：github.com 中"
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 今天4小时额度已用完
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 请明天重新添加订阅再使用
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
+  - name: 领取更长时间的免费试用账号
+    cipher: aes-256-cfb
+    obfs: http_simple
+    obfs-param: bing.com
+    password: crossxx
+    port: 8890
+    protocol: origin
+    protocol-param: ''
+    server: baidu.com
+    type: ssr
 
 proxy-groups:
-  - name: Free Clash Sub
+  - name: "1.订阅已过期或今日免费额度已用完- Try tomorrow"
     proxies:
-      - Free VMESS Proxy Server00
-      - Free VMESS Proxy Server01
-      - Free VMESS Proxy Server02
-      - Free VMESS Proxy Server03
-
+      - 今天4小时额度已用完
+      - 或原clash订阅已过期
+      - 请明天重新添加订阅再使用
     type: url-test
-    url: 'https://www.gstatic.com/generate_204'
-    interval: 300
-  - name: 🔥ChatGPT
+    url: https://www.gstatic.com/generate_204
+    interval: 300000
+  - name: "2.请到倚天剑clash购买专用线路- Buy Server"
     proxies:
-      - Free VMESS Proxy Server00
-      - Free VMESS Proxy Server01
-      - Free VMESS Proxy Server02
-      - Free VMESS Proxy Server03
-
+      - 搜索倚天剑clash
+      - 或登录https://a.aiguobit.com
+      - 备用https://a.hidexx.com
+      - 领取更长时间的免费试用账号
     type: url-test
-    url: 'https://www.gstatic.com/generate_204'
-    interval: 300
+    url: https://www.gstatic.com/generate_204
+    interval: 300000
+  - name: "3.更多帮助信息- More info"
+    proxies:
+      - "获取免费账号：github.com 中"
+      - "搜 crossxx-labs/free-proxy"
+      - "或登录https://a.aiguobit.com"
+      - "领取更长时间的免费试用账号"
+    type: url-test
+    url: https://www.gstatic.com/generate_204
+    interval: 300000
 
 rules:
-    - DOMAIN-SUFFIX,apple.com,DIRECT
-    - DOMAIN-SUFFIX,microsoft.com,DIRECT
-    - DOMAIN-SUFFIX,amazon.com,DIRECT
-    - DOMAIN-SUFFIX,baidu.com,DIRECT
-    - DOMAIN-SUFFIX,taobao.com,DIRECT
-    - DOMAIN-SUFFIX,jd.com,DIRECT
-    - DOMAIN-SUFFIX,qq.com,DIRECT
-    - DOMAIN-SUFFIX,instagram.com,Free Clash Sub
-    - DOMAIN-SUFFIX,stripe.com,Free Clash Sub
-    - DOMAIN-SUFFIX,chatgpt.com,Free Clash Sub
-    - DOMAIN-SUFFIX,openai.com,Free Clash Sub
-    - DOMAIN-SUFFIX,google.com,Free Clash Sub
-    - DOMAIN-SUFFIX,gstatic.com,Free Clash Sub
-    - DOMAIN-KEYWORD,facebook,Free Clash Sub
-    - 'DOMAIN,subapi.doggysub.uk,DIRECT'
-    - 'PROCESS-NAME,v2ray,DIRECT'
-    - 'PROCESS-NAME,xray,DIRECT'
-    - 'PROCESS-NAME,naive,DIRECT'
-    - 'PROCESS-NAME,trojan,DIRECT'
-    - 'PROCESS-NAME,trojan-go,DIRECT'
-    - 'PROCESS-NAME,ss-local,DIRECT'
-    - 'PROCESS-NAME,privoxy,DIRECT'
-    - 'PROCESS-NAME,leaf,DIRECT'
-    - 'PROCESS-NAME,v2ray.exe,DIRECT'
-    - 'PROCESS-NAME,xray.exe,DIRECT'
-    - 'PROCESS-NAME,naive.exe,DIRECT'
-    - 'PROCESS-NAME,trojan.exe,DIRECT'
-    - 'PROCESS-NAME,trojan-go.exe,DIRECT'
-    - 'PROCESS-NAME,ss-local.exe,DIRECT'
-    - 'PROCESS-NAME,privoxy.exe,DIRECT'
-    - 'PROCESS-NAME,leaf.exe,DIRECT'
-    - 'PROCESS-NAME,Surge,DIRECT'
-    - 'PROCESS-NAME,Surge 2,DIRECT'
-    - 'PROCESS-NAME,Surge 3,DIRECT'
-    - 'PROCESS-NAME,Surge 4,DIRECT'
-    - 'PROCESS-NAME,Surge%202,DIRECT'
-    - 'PROCESS-NAME,Surge%203,DIRECT'
-    - 'PROCESS-NAME,Surge%204,DIRECT'
-    - 'PROCESS-NAME,Thunder,DIRECT'
-    - 'PROCESS-NAME,DownloadService,DIRECT'
-    - 'PROCESS-NAME,qBittorrent,DIRECT'
-    - 'PROCESS-NAME,Transmission,DIRECT'
-    - 'PROCESS-NAME,fdm,DIRECT'
-    - 'PROCESS-NAME,aria2c,DIRECT'
-    - 'PROCESS-NAME,Folx,DIRECT'
-    - 'PROCESS-NAME,NetTransport,DIRECT'
-    - 'PROCESS-NAME,uTorrent,DIRECT'
-    - 'PROCESS-NAME,WebTorrent,DIRECT'
-    - 'PROCESS-NAME,aria2c.exe,DIRECT'
-    - 'PROCESS-NAME,BitComet.exe,DIRECT'
-    - 'PROCESS-NAME,fdm.exe,DIRECT'
-    - 'PROCESS-NAME,NetTransport.exe,DIRECT'
-    - 'PROCESS-NAME,qbittorrent.exe,DIRECT'
-    - 'PROCESS-NAME,Thunder.exe,DIRECT'
-    - 'PROCESS-NAME,ThunderVIP.exe,DIRECT'
-    - 'PROCESS-NAME,transmission-daemon.exe,DIRECT'
-    - 'PROCESS-NAME,transmission-qt.exe,DIRECT'
-    - 'PROCESS-NAME,uTorrent.exe,DIRECT'
-    - 'PROCESS-NAME,WebTorrent.exe,DIRECT'
-    - 'PROCESS-NAME,aDrive.exe,DIRECT'
-    - 'DOMAIN-SUFFIX,services.googleapis.cn,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,xn--ngstr-lra8j.com,Free Clash Sub'
-    - 'DOMAIN,safebrowsing.urlsec.qq.com,DIRECT'
-    - 'DOMAIN,safebrowsing.googleapis.com,DIRECT'
-    - 'DOMAIN,developer.apple.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,digicert.com,Free Clash Sub'
-    - 'DOMAIN,ocsp.apple.com,Free Clash Sub'
-    - 'DOMAIN,ocsp.comodoca.com,Free Clash Sub'
-    - 'DOMAIN,ocsp.usertrust.com,Free Clash Sub'
-    - 'DOMAIN,ocsp.sectigo.com,Free Clash Sub'
-    - 'DOMAIN,ocsp.verisign.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,apple-dns.net,Free Clash Sub'
-    - 'DOMAIN,testflight.apple.com,Free Clash Sub'
-    - 'DOMAIN,sandbox.itunes.apple.com,Free Clash Sub'
-    - 'DOMAIN,itunes.apple.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,apps.apple.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,blobstore.apple.com,Free Clash Sub'
-    - 'DOMAIN,cvws.icloud-content.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,mzstatic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,itunes.apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,icloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,icloud-content.com,DIRECT'
-    - 'DOMAIN-SUFFIX,me.com,DIRECT'
-    - 'DOMAIN-SUFFIX,aaplimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cdn20.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cdn-apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,akadns.net,DIRECT'
-    - 'DOMAIN-SUFFIX,akamaiedge.net,DIRECT'
-    - 'DOMAIN-SUFFIX,edgekey.net,DIRECT'
-    - 'DOMAIN-SUFFIX,mwcloudcdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,mwcname.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple-cloudkit.com,DIRECT'
-    - 'DOMAIN-SUFFIX,apple-mapkit.com,DIRECT'
-    - 'DOMAIN-KEYWORD,chatgpt-async-webps-prod-eastus,🔥ChatGPT'
-    - 'DOMAIN,chat.openai.com.cdn.cloudflare.net,🔥ChatGPT'
-    - 'DOMAIN,o33249.ingest.sentry.io,🔥ChatGPT'
-    - 'DOMAIN,openaiapi-site.azureedge.net,🔥ChatGPT'
-    - 'DOMAIN,openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net,🔥ChatGPT'
-    - 'DOMAIN,openaicom.imgix.net,🔥ChatGPT'
-    - 'DOMAIN,openaicomproductionae4b.blob.core.windows.net,🔥ChatGPT'
-    - 'DOMAIN,production-openaicom-storage.azureedge.net,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,chatgpt.com,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,oaistatic.com,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,oaiusercontent.com,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,openai.com,🔥ChatGPT'
-    - 'DOMAIN,api.githubcopilot.com,🔥ChatGPT'
-    - 'DOMAIN,copilot-proxy.githubusercontent.com,🔥ChatGPT'
-    - 'DOMAIN,copilot.microsoft.com,🔥ChatGPT'
-    - 'DOMAIN,sydney.bing.com,🔥ChatGPT'
-    - 'DOMAIN,www.bing.com,🔥ChatGPT'
-    - 'DOMAIN,bard.google.com,🔥ChatGPT'
-    - 'DOMAIN,gemini.google.com,🔥ChatGPT'
-    - 'DOMAIN,generativelanguage.googleapis.com,🔥ChatGPT'
-    - 'DOMAIN,ai.google.dev,🔥ChatGPT'
-    - 'DOMAIN,aida.googleapis.com,🔥ChatGPT'
-    - 'DOMAIN,aistudio.google.com,🔥ChatGPT'
-    - 'DOMAIN,alkalimakersuite-pa.clients6.google.com,🔥ChatGPT'
-    - 'DOMAIN,makersuite.google.com,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,anthropic.com,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,claude.ai,🔥ChatGPT'
-    - 'IP-CIDR,160.79.104.0/23,🔥ChatGPT,no-resolve'
-    - 'IP-CIDR6,2607:6bc0::/48,🔥ChatGPT,no-resolve'
-    - 'DOMAIN-SUFFIX,grazie.ai,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,grazie.aws.intellij.net,🔥ChatGPT'
-    - 'DOMAIN,imagine.meta.com,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,meta.ai,🔥ChatGPT'
-    - 'DOMAIN-SUFFIX,cn,DIRECT'
-    - 'DOMAIN-KEYWORD,-cn,DIRECT'
-    - 'DOMAIN-SUFFIX,126.com,DIRECT'
-    - 'DOMAIN-SUFFIX,126.net,DIRECT'
-    - 'DOMAIN-SUFFIX,127.net,DIRECT'
-    - 'DOMAIN-SUFFIX,163.com,DIRECT'
-    - 'DOMAIN-SUFFIX,360buyimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,36kr.com,DIRECT'
-    - 'DOMAIN-SUFFIX,acfun.tv,DIRECT'
-    - 'DOMAIN-SUFFIX,air-matters.com,DIRECT'
-    - 'DOMAIN-SUFFIX,aixifan.com,DIRECT'
-    - 'DOMAIN-KEYWORD,alicdn,DIRECT'
-    - 'DOMAIN-KEYWORD,alipay,DIRECT'
-    - 'DOMAIN-KEYWORD,taobao,DIRECT'
-    - 'DOMAIN-SUFFIX,amap.com,DIRECT'
-    - 'DOMAIN-SUFFIX,autonavi.com,DIRECT'
-    - 'DOMAIN-KEYWORD,baidu,DIRECT'
-    - 'DOMAIN-SUFFIX,bdimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bdstatic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bilibili.com,DIRECT'
-    - 'DOMAIN-SUFFIX,bilivideo.com,DIRECT'
-    - 'DOMAIN-SUFFIX,caiyunapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,clouddn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cnbeta.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cnbetacdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,cootekservice.com,DIRECT'
-    - 'DOMAIN-SUFFIX,csdn.net,DIRECT'
-    - 'DOMAIN-SUFFIX,ctrip.com,DIRECT'
-    - 'DOMAIN-SUFFIX,dgtle.com,DIRECT'
-    - 'DOMAIN-SUFFIX,dianping.com,DIRECT'
-    - 'DOMAIN-SUFFIX,douban.com,DIRECT'
-    - 'DOMAIN-SUFFIX,doubanio.com,DIRECT'
-    - 'DOMAIN-SUFFIX,duokan.com,DIRECT'
-    - 'DOMAIN-SUFFIX,easou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ele.me,DIRECT'
-    - 'DOMAIN-SUFFIX,feng.com,DIRECT'
-    - 'DOMAIN-SUFFIX,fir.im,DIRECT'
-    - 'DOMAIN-SUFFIX,frdic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,g-cores.com,DIRECT'
-    - 'DOMAIN-SUFFIX,godic.net,DIRECT'
-    - 'DOMAIN-SUFFIX,gtimg.com,DIRECT'
-    - 'DOMAIN,cdn.hockeyapp.net,DIRECT'
-    - 'DOMAIN-SUFFIX,hongxiu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,hxcdn.net,DIRECT'
-    - 'DOMAIN-SUFFIX,iciba.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ifeng.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ifengimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ipip.net,DIRECT'
-    - 'DOMAIN-SUFFIX,iqiyi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,jd.com,DIRECT'
-    - 'DOMAIN-SUFFIX,jianshu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,knewone.com,DIRECT'
-    - 'DOMAIN-SUFFIX,le.com,DIRECT'
-    - 'DOMAIN-SUFFIX,lecloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,lemicp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,luoo.net,DIRECT'
-    - 'DOMAIN-SUFFIX,meituan.com,DIRECT'
-    - 'DOMAIN-SUFFIX,meituan.net,DIRECT'
-    - 'DOMAIN-SUFFIX,mi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miaopai.com,DIRECT'
-    - 'DOMAIN-SUFFIX,microsoft.com,DIRECT'
-    - 'DOMAIN-SUFFIX,microsoftonline.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miui.com,DIRECT'
-    - 'DOMAIN-SUFFIX,miwifi.com,DIRECT'
-    - 'DOMAIN-SUFFIX,mob.com,DIRECT'
-    - 'DOMAIN-SUFFIX,netease.com,DIRECT'
-    - 'DOMAIN-SUFFIX,office.com,DIRECT'
-    - 'DOMAIN-SUFFIX,office365.com,DIRECT'
-    - 'DOMAIN-KEYWORD,officecdn,DIRECT'
-    - 'DOMAIN-SUFFIX,oschina.net,DIRECT'
-    - 'DOMAIN-SUFFIX,ppsimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,pstatp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qcloud.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qdaily.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qdmm.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qhimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qhres.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qidian.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qihucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiniu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiniucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qiyipic.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qq.com,DIRECT'
-    - 'DOMAIN-SUFFIX,qqurl.com,DIRECT'
-    - 'DOMAIN-SUFFIX,rarbg.to,DIRECT'
-    - 'DOMAIN-SUFFIX,ruguoapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,segmentfault.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sinaapp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,smzdm.com,DIRECT'
-    - 'DOMAIN-SUFFIX,snapdrop.net,DIRECT'
-    - 'DOMAIN-SUFFIX,sogou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sogoucdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,sohu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,soku.com,DIRECT'
-    - 'DOMAIN-SUFFIX,speedtest.net,DIRECT'
-    - 'DOMAIN-SUFFIX,sspai.com,DIRECT'
-    - 'DOMAIN-SUFFIX,suning.com,DIRECT'
-    - 'DOMAIN-SUFFIX,taobao.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tencent.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tenpay.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tianyancha.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tmall.com,DIRECT'
-    - 'DOMAIN-SUFFIX,tudou.com,DIRECT'
-    - 'DOMAIN-SUFFIX,umetrip.com,DIRECT'
-    - 'DOMAIN-SUFFIX,upaiyun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,upyun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,veryzhun.com,DIRECT'
-    - 'DOMAIN-SUFFIX,weather.com,DIRECT'
-    - 'DOMAIN-SUFFIX,weibo.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xiami.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xiami.net,DIRECT'
-    - 'DOMAIN-SUFFIX,xiaomicp.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ximalaya.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xmcdn.com,DIRECT'
-    - 'DOMAIN-SUFFIX,xunlei.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yhd.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yihaodianimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,yinxiang.com,DIRECT'
-    - 'DOMAIN-SUFFIX,ykimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,youdao.com,DIRECT'
-    - 'DOMAIN-SUFFIX,youku.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zealer.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zhihu.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zhimg.com,DIRECT'
-    - 'DOMAIN-SUFFIX,zimuzu.tv,DIRECT'
-    - 'DOMAIN-SUFFIX,zoho.com,DIRECT'
-    - 'DOMAIN,fastly-download.epicgames.com,DIRECT'
-    - 'DOMAIN,epicgames-download1.akamaized.net,DIRECT'
-    - 'DOMAIN,steamcdn-a.akamaihd.net,DIRECT'
-    - 'DOMAIN-SUFFIX,steamserver.net,DIRECT'
-    - 'DOMAIN-SUFFIX,cm.steampowered.com,DIRECT'
-    - 'DOMAIN-SUFFIX,synology.com,DIRECT'
-    - 'DOMAIN-SUFFIX,dyndns.org,DIRECT'
-    - 'DOMAIN-SUFFIX,egdownload.fastly-edge.com,DIRECT'
-    - 'DOMAIN-KEYWORD,amazon,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,google,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,gmail,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,youtube,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,facebook,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,fb.me,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,fbcdn.net,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,twitter,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,instagram,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,dropbox,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,twimg.com,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,blogspot,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,youtu.be,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,whatsapp,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ipleak.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,browserscan.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,surfsharkdns.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,edns.ip-api.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,dnsleaktest.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,dnsleak.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,expressvpn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,nordvpn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,surfshark.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,perfect-privacy.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,browserleaks.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,browserleaks.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vpnunlimited.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,whoer.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,whrq.net,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,admarvel,REJECT'
-    - 'DOMAIN-KEYWORD,admaster,REJECT'
-    - 'DOMAIN-KEYWORD,adsage,REJECT'
-    - 'DOMAIN-KEYWORD,adsmogo,REJECT'
-    - 'DOMAIN-KEYWORD,adsrvmedia,REJECT'
-    - 'DOMAIN-KEYWORD,adwords,REJECT'
-    - 'DOMAIN-KEYWORD,adservice,REJECT'
-    - 'DOMAIN-SUFFIX,appsflyer.com,REJECT'
-    - 'DOMAIN-KEYWORD,domob,REJECT'
-    - 'DOMAIN-SUFFIX,doubleclick.net,REJECT'
-    - 'DOMAIN-KEYWORD,duomeng,REJECT'
-    - 'DOMAIN-KEYWORD,dwtrack,REJECT'
-    - 'DOMAIN-KEYWORD,guanggao,REJECT'
-    - 'DOMAIN-KEYWORD,lianmeng,REJECT'
-    - 'DOMAIN-SUFFIX,mmstat.com,REJECT'
-    - 'DOMAIN-KEYWORD,mopub,REJECT'
-    - 'DOMAIN-KEYWORD,omgmta,REJECT'
-    - 'DOMAIN-KEYWORD,openx,REJECT'
-    - 'DOMAIN-KEYWORD,partnerad,REJECT'
-    - 'DOMAIN-KEYWORD,pingfore,REJECT'
-    - 'DOMAIN-KEYWORD,supersonicads,REJECT'
-    - 'DOMAIN-KEYWORD,uedas,REJECT'
-    - 'DOMAIN-KEYWORD,umeng,REJECT'
-    - 'DOMAIN-KEYWORD,usage,REJECT'
-    - 'DOMAIN-SUFFIX,vungle.com,REJECT'
-    - 'DOMAIN-KEYWORD,wlmonitor,REJECT'
-    - 'DOMAIN-KEYWORD,zjtoolbar,REJECT'
-    - 'DOMAIN-SUFFIX,linkedin.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,licdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,9to5mac.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,abpchina.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,adblockplus.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,adobe.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,akamaized.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,alfredapp.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,amplitude.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ampproject.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,android.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,angularjs.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,aolcdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,apkpure.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,appledaily.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,appshopper.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,appspot.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,arcgis.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,archive.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,armorgames.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,aspnetcdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,att.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,awsstatic.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,azurewebsites.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bing.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bintray.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bit.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bit.ly,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bitbucket.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bjango.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bkrtx.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,blog.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,blogcdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,blogger.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,blogsmithmedia.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,blogspot.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,blogspot.hk,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,bloomberg.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,box.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,box.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cachefly.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,chromium.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cl.ly,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cloudflare.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cloudfront.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cloudmagic.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cmail19.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cnet.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cocoapods.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,comodoca.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,crashlytics.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,culturedcode.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,d.pr,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,danilo.to,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,dayone.me,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,db.tt,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,deskconnect.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,disq.us,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,disqus.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,disquscdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,dnsimple.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,docker.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,dribbble.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,droplr.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,duckduckgo.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,dueapp.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,dytt8.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,edgecastcdn.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,edgekey.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,edgesuite.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,engadget.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,entrust.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,eurekavpt.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,evernote.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,fabric.io,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,fast.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,fastly.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,fc2.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,feedburner.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,feedly.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,feedsportal.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,fiftythree.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,firebaseio.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,flexibits.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,flickr.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,flipboard.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,g.co,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,gabia.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,geni.us,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,gfx.ms,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ggpht.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ghostnoteapp.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,git.io,Free Clash Sub'
-    - 'DOMAIN-KEYWORD,github,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,globalsign.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,gmodules.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,godaddy.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,golang.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,gongm.in,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,goo.gl,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,goodreaders.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,goodreads.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,gravatar.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,gstatic.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,gvt0.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,hockeyapp.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,hotmail.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,icons8.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ifixit.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ift.tt,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ifttt.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,iherb.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,imageshack.us,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,img.ly,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,imgur.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,imore.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,instapaper.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ipn.li,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,is.gd,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,issuu.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,itgonglun.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,itun.es,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ixquick.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,j.mp,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,js.revsci.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,jshint.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,jtvnw.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,justgetflux.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,kat.cr,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,klip.me,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,libsyn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,line-apps.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,linode.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,lithium.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,littlehj.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,live.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,live.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,livefilestore.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,llnwd.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,macid.co,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,macromedia.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,macrumors.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,mashable.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,mathjax.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,medium.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,mega.co.nz,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,mega.nz,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,megaupload.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,microsofttranslator.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,mindnode.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,mobile01.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,modmyi.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,msedge.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,myfontastic.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,name.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,nextmedia.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,nsstatic.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,nssurge.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,nyt.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,nytimes.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,omnigroup.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,onedrive.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,onenote.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ooyala.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,openvpn.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,openwrt.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,orkut.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,osxdaily.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,outlook.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ow.ly,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,paddleapi.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,parallels.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,parse.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,pdfexpert.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,periscope.tv,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,pinboard.in,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,pinterest.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,pixelmator.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,pixiv.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,playpcesor.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,playstation.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,playstation.com.hk,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,playstation.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,playstationnetwork.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,pushwoosh.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,rime.im,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,servebom.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,sfx.ms,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,shadowsocks.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,sharethis.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,shazam.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,skype.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,smartdnsFree Clash Sub.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,smartmailcloud.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,sndcdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,sony.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,soundcloud.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,sourceforge.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,spotify.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,squarespace.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,sstatic.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,st.luluku.pw,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,stackoverflow.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,startpage.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,staticflickr.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,steamcommunity.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,symauth.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,symcb.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,symcd.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tapbots.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tapbots.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tdesktop.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,techcrunch.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,techsmith.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,thepiratebay.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,theverge.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,time.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,timeinc.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tiny.cc,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tinypic.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tmblr.co,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,todoist.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,trello.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,trustasiassl.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tumblr.co,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tumblr.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tweetdeck.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tweetmarker.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,twitch.tv,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,txmblr.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,typekit.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ubertags.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ublock.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ubnt.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ulyssesapp.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,urchin.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,usertrust.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,v.gd,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,v2ex.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vimeo.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vimeocdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vine.co,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vivaldi.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vox-cdn.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vsco.co,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,vultr.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,w.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,w3schools.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,webtype.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wikiwand.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wikileaks.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wikimedia.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wikipedia.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wikipedia.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,windows.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,windows.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wire.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wordpress.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,workflowy.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wp.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wsj.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,wsj.net,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,xda-developers.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,xeeno.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,xiti.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,yahoo.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,yimg.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ying.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,yoyo.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,ytimg.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,signal.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,whispersystems.org,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,cangku.moe,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,tradingview.com,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,telegra.ph,Free Clash Sub'
-    - 'DOMAIN-SUFFIX,telegram.org,Free Clash Sub'
-    - 'IP-CIDR,91.108.4.0/22,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,91.108.8.0/21,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,91.108.16.0/22,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,91.108.56.0/22,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,149.154.160.0/20,Free Clash Sub,no-resolve'
-    - 'IP-CIDR6,2001:67c:4e8::/48,Free Clash Sub,no-resolve'
-    - 'IP-CIDR6,2001:b28:f23d::/48,Free Clash Sub,no-resolve'
-    - 'IP-CIDR6,2001:b28:f23f::/48,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,120.232.181.162/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,120.241.147.226/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,120.253.253.226/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,120.253.255.162/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,120.253.255.34/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,120.253.255.98/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,180.163.150.162/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,180.163.150.34/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,180.163.151.162/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,180.163.151.34/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,203.208.39.0/24,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,203.208.40.0/24,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,203.208.41.0/24,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,203.208.43.0/24,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,203.208.50.0/24,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,220.181.174.162/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,220.181.174.226/32,Free Clash Sub,no-resolve'
-    - 'IP-CIDR,220.181.174.34/32,Free Clash Sub,no-resolve'
-    - 'DOMAIN,injections.adguard.org,DIRECT'
-    - 'DOMAIN,local.adguard.org,DIRECT'
-    - 'DOMAIN-SUFFIX,local,DIRECT'
-    - 'IP-CIDR,127.0.0.0/8,DIRECT'
-    - 'IP-CIDR,172.16.0.0/12,DIRECT'
-    - 'IP-CIDR,192.168.0.0/16,DIRECT'
-    - 'IP-CIDR,10.0.0.0/8,DIRECT'
-    - 'IP-CIDR,17.0.0.0/8,DIRECT'
-    - 'IP-CIDR,100.64.0.0/10,DIRECT'
-    - 'IP-CIDR,224.0.0.0/4,DIRECT'
-    - 'IP-CIDR6,fe80::/10,DIRECT'
     - 'GEOIP,CN,DIRECT'
-    - 'MATCH,Free Clash Sub'
+    - 'MATCH,DIRECT'
